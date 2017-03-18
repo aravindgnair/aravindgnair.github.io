@@ -1,29 +1,53 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>aravind</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="#">Home</a></li>
-	        	<li><a href="#">About</a></li>
-        		<li><a href="#">CV</a></li>
-        		<li><a href="#">Blog</a></li>
-						<li><a href="learn.html">Learn</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hello World!</h1>
-				<p>Welcome to my website</p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="https://github.com/aravindgnair">github.com/aravindgnair</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="en" ng-app="libraryApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>aravind</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid" ng-controller="LibraryController as library">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="alert alert-info">
+            <h3>Online Library</h3>
+            <p>
+              I learn stuff online. This list is a collation of online resources which helped me to learn new things.
+              Development of this page is also an attempt to learn BootStrap, AngularJS and Git.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Learn Online</div>
+            <div class="panel-body">
+              <p>List of my favourite online courses and learning sites!</p>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="book in library.books">
+                <i class="glyphicon glyphicon-bookmark"></i>
+                <a href="{{book.url}}" target="_blank">{{book.title}}</a> - <span>{{book.description}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="js/library.js"></script>
+  </body>
 </html>
