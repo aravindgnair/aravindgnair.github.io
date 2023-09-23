@@ -1,2 +1,2 @@
 # aravindgnair.github.io
-Personal Website
+(Personal Website)[https://aravindgnair.github.io/] 
